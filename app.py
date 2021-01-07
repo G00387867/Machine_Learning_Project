@@ -59,9 +59,16 @@ app = fl.Flask(__name__)
 # Add root route.
 @app.route("/")
 def home():
-    return app.send_static_pages("index.html")
+    return app.send_static_file("index.html")
 
 # Add keras route.
 @app.route("/api/keras")
-def keras():
+def keras(x):
     return model.predict([x])
+
+
+
+if __name__ == "__main__" :
+  app.run(debug=True)
+
+
