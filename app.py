@@ -19,6 +19,8 @@ from sklearn.preprocessing import PolynomialFeatures
 import tensorflow as tf
 import tensorflow.keras as kr
 from tensorflow.keras import layers
+# create a new web app.
+app = fl.Flask(__name__)
 
 # importing the data set
 url = "https://raw.githubusercontent.com/ianmcloughlin/2020A-machstat-project/master/dataset/powerproduction.csv"
@@ -53,8 +55,6 @@ def keras(x):
     return model.predict([x])
 
 
-# create a new web app.
-app = fl.Flask(__name__)
 
 # Add root route.
 @app.route("/")
