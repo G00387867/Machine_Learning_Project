@@ -1,4 +1,3 @@
-  
 FROM python:3
 
 WORKDIR C:\Users\lenovo\repo\Machine_Learning_Project\Machine_Learning_Project
