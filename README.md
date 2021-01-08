@@ -51,7 +51,7 @@ Download and Install Anaconda's latest release from it's official and licensed s
 Insert the following in the CLI:
 
 ```
-$ <span style=“color:green;”>set</span> FLASK_APP=app.py
+$ set FLASK_APP=app.py
 ```
 then;
 
@@ -63,4 +63,4 @@ $ python -m flask run
 
 ### License
 
-This repository was enrolled under the MIT license. Please click [**Here**](https://github.com/G00387867/FDA-project/blob/main/LICENSE) for further information.
+This repository was enrolled under the MIT license. Please click [**Here**](https://github.com/G00387867/Machine_Learning_Project/blob/main/LICENSE) for further information.
