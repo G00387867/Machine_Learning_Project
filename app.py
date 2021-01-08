@@ -1,8 +1,9 @@
 # importing required packages and libraries
 
 # flask for web app.
-import flask as fl
-
+import flask as fl 
+from flask import Flask, redirect, url_for, render_template, request, flash, jsonify
+import pickle
 # Numerical arrays
 import numpy as np
 
@@ -19,6 +20,7 @@ from sklearn.preprocessing import PolynomialFeatures
 import tensorflow as tf
 import tensorflow.keras as kr
 from tensorflow.keras import layers
+
 
 # importing the data set
 url = "https://raw.githubusercontent.com/ianmcloughlin/2020A-machstat-project/master/dataset/powerproduction.csv"
@@ -58,9 +60,23 @@ app = fl.Flask(__name__)
 
 
 # Add root route.
-@app.route("./")
+@app.route("/")
 def home():
-    return app.send_static_file("index.html")
+    return app.send_static_file("index1.html")
+
+#To use the predict button in our web-app
+@app.route('/predict',methods=['POST'])
+def predict():
+    '''
+    For rendering results on HTML GUI
+    '''
+    int_features = [float(x) for x in request.form.values()]
+    final_features = [np.array(int_features)]
+    prediction = model.predict(final_features)
+
+    output = round(prediction[0], 2)
+
+    return render_template('index1.html', prediction_text='Power Output is :{}'.format(output))
 
 # Add keras route.
 @app.route("/api/keras")

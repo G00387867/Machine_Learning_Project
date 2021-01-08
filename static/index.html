@@ -14,7 +14,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, from index.html!</h1>
+    <h1>Hello, predict the power output from a wind turbine!!</h1>
     <div class="container">
         <div class="row">
           <div class="col-sm">
@@ -26,7 +26,7 @@
             <button type="button" class="btn btn-success" id="keras-button">Keras</button>
           </div>
           <div class="col-sm">
-            <button type="button" class="btn btn-primary" id="normal-button">Sklearn</button>
+            <button type="button" class="btn btn-primary" id="sklearn-button">Sklearn</button>
           </div>
         </div>
       </div>
@@ -46,13 +46,13 @@
 
     <script>
       // Adapted from stack overflow posts.
-      $("#normal-button").click(function(e) {
+      $("#keras-button").click(function(e) {
           e.preventDefault();
           $.getJSON("/api/keras", function(data) {
               $('#output').val(data.value);
           });
       });
-      $("#uniform-button").click(function(e) {
+      $("sklearn-button").click(function(e) {
           e.preventDefault();
           $.getJSON("/api/sklearn", function(data) {
               $('#output').val(data.value);
