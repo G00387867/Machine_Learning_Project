@@ -58,6 +58,14 @@ then;
 ```
 $ python -m flask run
 ```
+***
+### Docker
+
+```
+docker build . -t app-image
+docker run --name app-container -d -p 5000:5000 app-image
+
+```
 
 ***
 
